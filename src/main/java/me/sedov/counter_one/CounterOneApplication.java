@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CounterOneApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CounterOneApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CounterOneApplication.class, args);
+        System.out.println("Hi");
+    }
 
 }
