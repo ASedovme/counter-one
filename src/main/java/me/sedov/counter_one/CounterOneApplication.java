@@ -8,7 +8,7 @@ public class CounterOneApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CounterOneApplication.class, args);
-        System.out.println("Hi");
+
     }
 
 }
