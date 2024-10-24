@@ -22,26 +22,43 @@ public class CounterOneController {
     }
 
     @GetMapping("/plus")
-    public String plus(@RequestParam Integer num1, @RequestParam Integer num2) {
-        return num1 + "+" + num2 + "=" + service.plus(num1, num2);
+    public String plus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        {
+            if (num1 == null || num2 == null) {
+                return "Не заполнены параметры";
+            }
+        }
+        return String.valueOf(service.plus(num1, num2));
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam Integer num1, @RequestParam Integer num2) {
-        return num1 + "-" + num2 + "=" + service.minus(num1, num2);
+    public String minus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        {
+            if (num1 == null || num2 == null) {
+                return "Не заполнены параметры";
+            }
+        }
+        return String.valueOf(service.minus(num1, num2));
     }
 
     @GetMapping("/multiply")
-    public String multiply(@RequestParam Integer num1, @RequestParam Integer num2) {
-        return num1 + "*" + num2 + "=" + service.multiply(num1, num2);
+    public String multiply(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        {
+            if (num1 == null || num2 == null) {
+                return "Не заполнены параметры";
+            }
+        }
+        return String.valueOf(service.multiply(num1, num2));
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam Integer num1, @RequestParam Integer num2) {
+    public String divide(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
         {
-            if (num2 != 0) {
-                return num1 + "/" + num2 + "=" + service.divide(num1, num2);
-            } else return "На ноль делить нельзя";
+            if (num1 == null || num2 == null) {
+                return "Не заполнены параметры";
+            }
         }
+        return String.valueOf(service.divide(num1, num2));
     }
 }
+
